@@ -1,0 +1,25 @@
+//BASE STYLE
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; // 10/16px = 62.5% -> 1rem = 10px
+}
+
+body {
+  font-family: $font-primary;
+  color: $dark-blue;
+  font-weight: 400;
+  //max-width: 1600px;
+  margin: 0 auto;
+}
+
+*:focus {
+  outline: none;
+}

@@ -1,0 +1,166 @@
+.continer {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "introContent"
+    "priceInfo"
+    "signupForm";
+  grid-row-gap: 2rem;
+  background-image: url("../../images/bg-intro-mobile.png"), linear-gradient($red, $red);
+  padding: 5rem 10%;
+  height: 100%;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.intro-content {
+  grid-area: introContent;
+  color: $text-color-white;
+  max-width: 36rem;
+  margin: 0 auto;
+  .title {
+    font-size: 2.8rem;
+  }
+  .discription {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+  }
+}
+
+.price-info {
+  grid-area: priceInfo;
+  align-self: end;
+  color: $text-color-white;
+  background-color: $blue;
+  border-radius: 1rem;
+  min-height: 7rem;
+  max-height: 8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 1.2rem;
+  box-shadow: rgba(0, 0, 0, 0.15) 1px 7px 0px;
+  .trial-day {
+    .day-highlighter {
+      font-weight: 600;
+    }
+  }
+  .trial-price {
+    line-height: 2rem;
+  }
+}
+
+.signup-form {
+  grid-area: signupForm;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #fff;
+  padding: 1.8rem 2rem;
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.15) 1px 7px 0px;
+  input {
+    height: 5rem;
+    margin-bottom: 1.5rem;
+    padding: 0.6rem 2rem;
+    border-radius: 0.5rem;
+    border: 1px solid $grayish-blue;
+    font-weight: 600;
+    &:focus {
+      border: 1px solid $blue;
+    }
+    &.error {
+      background: url("../../images/icon-error.svg") no-repeat 96% 1rem;
+      border: 1px solid $red;
+    }
+  }
+  .error-message {
+    text-align: right;
+    margin: -0.5rem 0rem 1rem 0rem;
+    color: $red;
+    font-size: 1.1rem;
+    font-style: italic;
+  }
+  .signup-btn {
+    display: block;
+    height: 5rem;
+    margin-top: 0.3rem;
+    padding: 0.6rem 2rem;
+    border-radius: 0.5rem;
+    border: 1px solid $green;
+    background: $green;
+    color: $text-color-white;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    box-shadow: hsl(154, 43%, 46%) 1px 4px 0px;
+    cursor: pointer;
+    transition: all 0.5s;
+    &:hover {
+      background: hsl(154, 44%, 67%);
+    }
+  }
+  .terms {
+    margin-top: 1rem;
+    color: $grayish-blue;
+    .terms-link {
+      color: $red;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.5s;
+      &:hover {
+        color: $dark-blue;
+      }
+    }
+  }
+}
+
+/* DESKTOP */
+@media (min-width: 980px) {
+  .continer {
+    grid-template-columns: 50% 1fr;
+    grid-template-areas: " . priceInfo" "introContent signupForm";
+    grid-row-gap: 2.2rem;
+    grid-column-gap: 2rem;
+    align-items: center;
+    background-image: url("../../images/bg-intro-desktop.png"), linear-gradient($red, $red);
+    padding: 5rem 3rem;
+    height: 100%;
+    min-height: 100vh;
+    text-align: left;
+  }
+
+  .intro-content {
+    padding: 0rem 0rem 0rem 5rem;
+    align-self: start;
+    justify-self: right;
+    max-width: 52rem;
+    margin-top: 6rem;
+    .title {
+      font-size: 4.8rem;
+      line-height: 4.8rem;
+    }
+    .discription {
+      margin-top: 2.5rem;
+      font-size: 1.5rem;
+    }
+  }
+  .price-info {
+    align-self: end;
+    text-align: center;
+    max-width: 50rem;
+    min-height: 4.6rem;
+    flex-direction: row;
+    padding: 2rem 0rem;
+    font-size: 1.3rem;
+  }
+  .signup-form {
+    align-self: start;
+    padding: 5rem;
+    max-width: 50rem;
+  }
+  .terms {
+    text-align: center;
+  }
+}
